@@ -167,34 +167,24 @@
             <?= esc(session()->getFlashdata('error')) ?>
         </p>
     <?php endif; ?>
+<form method="post" action="<?= site_url('login') ?>" autocomplete="off">
 
-    <form method="post" action="<?= site_url('login') ?>" autocomplete="off">
+    <!-- CSRF token -->
+    <?= csrf_field() ?>
 
-        <!-- CSRF PROTECTION -->
-        <?= csrf_field() ?>
+    <label for="password">Password</label>
+    <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        placeholder="Enter your password"
+        autocomplete="current-password"
+    />
 
-        <label for="email">Email</label>
-        <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            placeholder="Enter your email"
-            autocomplete="username"
-        />
+    <button type="submit">Login</button>
+</form>
 
-        <label for="password">Password</label>
-        <input
-            type="password"
-            id="password"
-            name="password"
-            required
-            placeholder="Enter your password"
-            autocomplete="current-password"
-        />
-
-        <button type="submit">Login</button>
-    </form>
 
 </div>
 </body>
