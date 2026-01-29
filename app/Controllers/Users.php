@@ -44,9 +44,10 @@ public function addUser()
 public function fetchUsers()
 {
     $userModel = new \App\Models\UserModel();
-    $data = $userModel->findAll();
+    $users = $userModel->findAll();
 
-    return $this->response->setJSON($data);
+    // return $this->response->setJSON($data);
+    return view("employee/employee", ['users' => $users]);
 }
 
 

@@ -11,6 +11,15 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Auth::login');
 $routes->get('login', 'Auth::login');
 
+$routes->get('backend', 'Backend::index');
+$routes->get('plan', 'Backend::plan');
+$routes->get('backend/sql', 'Backend::sql');
+$routes->post('backend/sql/run', 'Backend::runSql');
+// Employee Book
+$routes->get('employees/list', 'Users::fetchUsers', ['as' => 'employee-book']);
+$routes->get('resources', 'Resource::index');
+// Add User POST
+$routes->post('employees/add', 'Users::addUser', ['as' => 'employee-add']);
 // Auth routes
 $routes->post('login', 'Auth::attemptLogin');
 $routes->get('logout', 'Auth::logout');
@@ -51,7 +60,7 @@ $routes->get('creative/fetchDepartmentList', 'CreativeController::fetchDepartmen
 $routes->get('event_details', 'Event::index');
 
 // 🔹 Data Center / Reports
-$routes->get('resource_data_center', 'Database::summaryByState');
+
 
 // 🔹 Image to Text (OCR API)
 $routes->post('imagetotext', 'Tools::convertImageToText');
