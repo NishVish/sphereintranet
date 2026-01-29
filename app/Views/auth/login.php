@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Login</title>
+
+    <!-- Security headers (best effort from HTML side) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' https: data:;">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+
+
     <style>
         /* Reset some basics */
         * {
@@ -142,32 +149,53 @@
             }
         }
     </style>
+
 </head>
+
 <body>
-    <div class="login-container">
-        <img class="logo" src="https://spheretravelmedia.com/wp-content/uploads/2025/03/cropped-cropped-38x38inch-Sphere-Logo-Copy-min_prev_ui-300x100.png" alt="Company Logo" width="150" />
+<div class="login-container">
 
-        <h2>Login</h2>
+    <img class="logo"
+         src="https://spheretravelmedia.com/wp-content/uploads/2025/03/cropped-cropped-38x38inch-Sphere-Logo-Copy-min_prev_ui-300x100.png"
+         alt="Company Logo"
+         width="150" />
 
-        <?php if (session()->getFlashdata('error')): ?>
-            <p class="flash-error"><?= session()->getFlashdata('error') ?></p>
-        <?php endif; ?>
+    <h2>Login</h2>
 
-        <form method="post" action="<?= site_url('login') ?>">
+    <?php if (session()->getFlashdata('error')): ?>
+        <p class="flash-error">
+            <?= esc(session()->getFlashdata('error')) ?>
+        </p>
+    <?php endif; ?>
 
-            <input type="password" id="password" name="password" required autofocus placeholder="Enter your password" />
+    <form method="post" action="<?= site_url('login') ?>" autocomplete="off">
 
-            <button type="submit">Login</button>
-        </form>
+        <!-- CSRF PROTECTION -->
+        <?= csrf_field() ?>
 
-        <hr>
+        <label for="email">Email</label>
+        <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="Enter your email"
+            autocomplete="username"
+        />
 
-        <!-- Login as test user form -->
-        <form method="post" action="<?= site_url('login') ?>">
-            <input type="hidden" name="email" value="test@example.com" />
-            <input type="hidden" name="password" value="123" />
-            <button type="submit" class="test-user-btn">Login as Test User</button>
-        </form>
-    </div>
+        <label for="password">Password</label>
+        <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            placeholder="Enter your password"
+            autocomplete="current-password"
+        />
+
+        <button type="submit">Login</button>
+    </form>
+
+</div>
 </body>
 </html>
