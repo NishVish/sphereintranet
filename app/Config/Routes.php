@@ -10,6 +10,10 @@ use CodeIgniter\Router\RouteCollection;
 // Default route
 $routes->get('/', 'Auth::login');
 $routes->get('login', 'Auth::login');
+$routes->post('login', 'Auth::attemptLogin');
+
+
+
 
 $routes->get('backend', 'Backend::index');
 $routes->get('plan', 'Backend::plan');
@@ -21,7 +25,6 @@ $routes->get('resources', 'Resource::index');
 // Add User POST
 $routes->post('employees/add', 'Users::addUser', ['as' => 'employee-add']);
 // Auth routes
-$routes->post('login', 'Auth::attemptLogin');
 $routes->get('logout', 'Auth::logout');
 
 // Dashboard & Registration

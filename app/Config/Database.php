@@ -26,8 +26,8 @@ class Database extends Config
      */
     public array $default = [
         'DSN'          => '',
-         //'hostname'     => '148.66.157.21.host.secureserver.net',        'username'     => 'spheremedia_master',        'password'     => 'Zzt,0V{NpL[dEcds',        'database'     => 'spheremedia_corp',
-       'hostname'     => 'localhost',        'username'     => 'root',        'password'     => '',        'database'     => 'sphereintranet',
+         'hostname'     => '148.66.157.21.host.secureserver.net',        'username'     => 'spheremedia_master',        'password'     => 'Zzt,0V{NpL[dEcds',        'database'     => 'spheremedia_corp',
+       //'hostname'     => 'localhost',        'username'     => 'root',        'password'     => '',        'database'     => 'sphereintranet',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,
