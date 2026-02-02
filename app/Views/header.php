@@ -3,10 +3,10 @@
 <?php
 $tabs = [
     'home' => ['label' => 'Home', 'url' => base_url('home')],
-    'employee-book' => ['label' => 'Employee Book',         'url' => base_url('employees/list') ],
-    'resource_data_center' => ['label' => 'Resource & Data Center', 'url' => base_url('resources')],
+    'employees' => ['label' => 'Employee Book',         'url' => base_url('employees/list') ],
+    'Resources' => ['label' => 'Resource & Data Center', 'url' => base_url('resources')],
     'dashboard' => ['label' => 'Dashboard', 'url' => base_url('dashboard')],
-    'eventover' => ['label' => 'Event Overview', 'url' => base_url('events/overview')],
+    'events' => ['label' => 'Event Overview', 'url' => base_url('events/overview')],
     'tools' => ['label' => 'Tools', 'url' => base_url('tools')],
     'hr' => ['label' => 'HR Department', 'url' => base_url('hr')],
     'creative' => ['label' => 'Creative/Design', 'url' => base_url('creative')],
@@ -17,7 +17,7 @@ $userType = $session->get('user_type');
 if ($userType === 'admin' || $userType === 'hr') {
     $availableTabs = array_keys($tabs);
 } elseif ($userType === 'general') {
-    $availableTabs = ['communication', 'employee-book', 'resource_data_center', 'dashboard', 'tools'];
+    $availableTabs = ['communication', 'employees', 'resource_data_center', 'dashboard', 'tools'];
 } else {
     $availableTabs = ['communication', 'tools', 'creative'];
 }

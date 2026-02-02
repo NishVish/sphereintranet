@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Models\UserModel;
 use CodeIgniter\Controller;
 
-class Dash extends Controller
+class Dashboard extends Controller
 {
     public function home()
     {
@@ -20,6 +20,6 @@ class Dash extends Controller
             'username' => $session->get('username'),
         ];
 
-        return view('home', $data);
+        return view('dashboard/index', $data);
     }
 }

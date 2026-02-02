@@ -1,0 +1,18 @@
+CRITICAL - 2026-01-31 05:31:51 --> ErrorException: Undefined array key "communication"
+[Method: GET, Route: resources]
+in APPPATH\Views\header.php on line 142.
+ 1 APPPATH\Views\header.php(142): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "communication"', 'C:\\xampp\\htdocs\\sphereintranet\\app\\Views\\header.php', 142)
+ 2 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\sphereintranet\\app\\Views\\header.php')
+ 3 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(475): CodeIgniter\View\View->render('header', null, true)
+ 5 APPPATH\Views\resource\resource_data_center.php(1): CodeIgniter\View\View->include('header')
+ 6 SYSTEMPATH\View\View.php(226): include('C:\\xampp\\htdocs\\sphereintranet\\app\\Views\\resource\\resource_data_center.php')
+ 7 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 8 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('resource/resource_data_center', [], true)
+ 9 APPPATH\Controllers\Resource.php(8): view('resource/resource_data_center')
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Resource->index()
+11 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Resource))
+12 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
