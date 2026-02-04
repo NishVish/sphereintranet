@@ -34,11 +34,12 @@ $currentURL = current_url(true)->getPath();
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            background:#cccccc;
         }
 
         header {
             position: relative;
-            background: #222;
+    background: linear-gradient(to bottom, #f5bd05, #cccccc);
             padding: 10px 0;
         }
 
@@ -46,12 +47,12 @@ $currentURL = current_url(true)->getPath();
             position: absolute;
             top: 10px;
             right: 10px;
-            color: orange;
+            color: #3f3f3f;
             font-weight: bold;
         }
 
         .logout a {
-            color: orange;
+            color: #3f3f3f;
             text-decoration: none;
         }
 
