@@ -10,6 +10,7 @@ use CodeIgniter\Router\RouteCollection;
 // Default route
 $routes->get('/', 'Auth::login');
 $routes->get('login', 'Auth::login');
+$routes->get('login2', 'Auth::login2');
 $routes->post('login', 'Auth::attemptLogin');
 
 

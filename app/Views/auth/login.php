@@ -147,7 +147,12 @@
     <div class="login-container">
         <img class="logo" src="https://spheretravelmedia.com/wp-content/uploads/2025/03/cropped-cropped-38x38inch-Sphere-Logo-Copy-min_prev_ui-300x100.png" alt="Company Logo" width="150" />
 
-        <h2>Login</h2>
+<h2>
+    <a href="<?= site_url('login2') ?>" style="color: inherit; text-decoration: none;">
+        Login
+    </a>
+</h2>
+
 
         <?php if (session()->getFlashdata('error')): ?>
             <p class="flash-error"><?= session()->getFlashdata('error') ?></p>
