@@ -7,19 +7,19 @@ use CodeIgniter\Controller;
 
 class Auth extends Controller
 {
-    // public function login()
-    // {
-    //     return view('auth/login');
-    // }
+    public function login()
+    {
+        return view('auth/login');
+    }
 
-public function login()
+public function attemptLogin()
 {
     $session = session();
     $model = new UserModel();
 
     // $email = trim($this->request->getPost('email'));
-   // $password = //trim($this->request->getPost('password'));
-    $password = "admin123";
+   $password = trim($this->request->getPost('password'));
+    // $password = "admin123";
 
     $user = $model->where('password', $password)->first();
 
